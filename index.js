@@ -21,6 +21,7 @@ const loadVideo = async () =>{
      const cardContainer = document.getElementById('card-container');
      categoryVideo.forEach((item) =>{
         const div = document.createElement('div');
+        div.classList=`card w-full bg-base-100 shadow-xl`
         div.innerHTML = ` <figure class="overflow-hidden h-72">
         <img class="w-full" src='${item.thumbnail}' alt="Shoes" />
         <h6 class="absolute bottom-[40%] right-12">0 hr</h6>
@@ -28,15 +29,15 @@ const loadVideo = async () =>{
     <div class="card-body">
         <div class="flex space-x-4 justify-start items-start">
             <div>
-                <img class="w-12 h-12 rounded-full" src="./images/smells.jpg" alt="Shoes" />
+                <img class="w-12 h-12 rounded-full" src='${item.authors[0].profile_picture}' alt="Shoes" />
             </div>
             <div>
-                <h2 class="card-title">Laugh At My Pain</h2>
+                <h2 class="card-title">${item.title}</h2>
                 <div class="flex mt-3">
-                    <p class="">Author Name</p>
+                    <p class="">${item.authors[0].profile_name}</p>
                     <img class="w-6 h-6" src="./images/verify.png" alt="">
                 </div>
-                <p class="mt-3">100k Views</p>
+                <p class="mt-3">${item.others.views}</p>
             </div>
         </div>
     </div>`;
